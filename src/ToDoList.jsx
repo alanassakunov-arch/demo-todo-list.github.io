@@ -1,4 +1,5 @@
 import { useState } from "react"
+import logo from './images/logo.png'
 const ToDo = ({ tasks = [], setTasks , dateText}) => {
     const [newTask, setNewTask] = useState("") 
 
@@ -36,6 +37,7 @@ const ToDo = ({ tasks = [], setTasks , dateText}) => {
 
     return(
         <>
+        <img src={logo} alt="" />
             <p style={{marginBottom: '0', fontSize: '16px'}}>Список задач на: {dateText}</p>
              <ol style={{paddingLeft: '0'}}>
                 {tasks.map((task, index) => 
