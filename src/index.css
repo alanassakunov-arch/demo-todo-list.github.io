@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+* {
+  font-family: "Montserrat";
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+#core {
+  border: 2.5px solid #D9C59B;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 900px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  background-color: #D9C59B;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: white;
+}
+
+.functext {
+  background-color: #D9C59B;
+  height: 80px;
+  margin-top: 2.5px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.del {
+  background-color: #D9C59B;
+  border: none;
+  color: #091137;
+  font-family: "Montserrat";
+  border-radius: 5px;
+  height: 35px;
+  margin-left: auto;
+  width: 321px;
+  font-size: 16px;
+}
+
+.textbar {
+  width: -webkit-fill-available;
+  height: 25px;
+  border: none;
+  padding-left: 10px;
+}
+
+.textbar::placeholder {
+  color: #0F172A;
+  font-family: "Montserrat";
+}
+
+.add {
+  border: none;
+  background-color: #091137;
+  font-size: 15px;
+  border-radius: 5px;
+  height: 35px;
+  color: white;
+  font-family: "Montserrat";
+  cursor: pointer;
+  width: 109px;
+}
+
+.text {
+  flex-grow: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+.suggest, .negative {
+  width: 30px;
+  height: 32px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.suggest {
+  background-color: #D9C59B;
+  margin-right: 5px;
+}
+
+.negative {
+  background-color: #091137;
+}
+
+li {
+  border: 1px solid #D9C59B;
+  block-size: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.days {
+  display: grid;
+  /* Создаем 7 колонок одинаковой ширины (1fr) */
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px; /* Отступы между ячейками, если нужны */
+  margin-top: 2px;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #D9C59B;
+  width: 105.5px;
+  cursor: pointer;
+}
+
+.day.prev, .day.next {
+  color: #D9C59B; /* Цвет для дней соседних месяцев */
+}
+.dayweek {
+  width: 125px;
+  height: 30px;
+  border: 1px solid #D9C59B;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  justify-content: center;
+  background-color: #D9C59B;
+  color: white;
+}
+.prev, .next{
+  cursor: pointer;
+}
+.todo-list{
+  display: flex;
+    flex-direction: column;
+}
+.calendar{
+  margin-top: 5px;
+}
