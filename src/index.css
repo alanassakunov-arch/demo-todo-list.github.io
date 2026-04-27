@@ -13,10 +13,11 @@
   border: 2.5px solid #D9C59B;
   border-radius: 20px;
   padding: 40px;
-  max-width: 900px;
-  width: 900px;
+  max-width: 985px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .task {
@@ -79,6 +80,8 @@
 
 .text {
   flex-grow: 1;
+  display: flex;
+  width: 0;
 }
 
 button {
@@ -86,7 +89,6 @@ button {
 }
 
 .suggest, .negative {
-  width: 30px;
   height: 32px;
   color: white;
   border: none;
@@ -100,16 +102,20 @@ button {
 
 .negative {
   background-color: #091137;
+  width: 30px;
 }
 
 li {
   border: 1px solid #D9C59B;
-  block-size: 40px;
+  min-height: 40px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
+  overflow-wrap: break-word; 
+  hyphens: auto;  
+  word-break: break-all;
 }
 
 .choice {
@@ -168,4 +174,105 @@ li {
 }
 img{
   width: 300px;
+}
+/* @media (max-width: 600px){
+  #root{
+    margin:0 auto;
+    width: 100%;
+  }
+  * {
+  box-sizing: border-box;
+}
+#core{
+  padding: 15px;
+}
+.del{
+  width: 100%;
+}
+.choice{
+  justify-content: center;
+}
+.day{
+  width: 53px;
+}
+.weekdays{
+  width: 377.5px;
+}
+.dayweek{
+  width: 53px;
+}
+
+} */
+ @media (max-width: 600px) {
+  #root {
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden; /* Защита от горизонтальной прокрутки */
+  }
+
+  #core {
+    padding: 10px; /* Уменьшили отступ, чтобы выиграть место */
+  }
+  .weekdays{
+    width: 100%;
+    justify-content: space-between; 
+  }
+  img{
+    width: 250px;
+  }
+  .status{
+  white-space: nowrap;
+}
+  .text{
+    flex-direction: column;
+  }
+  .calendar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .day{
+    width: -webkit-fill-available;
+  }
+
+  /* Длинный текст в списке задач */
+  
+  .del{
+  width: 100%;
+}
+.choice{
+  justify-content: center;
+}
+.dayweek{
+  width: 13.5%;
+}
+.days{
+  width: -webkit-fill-available;  
+}
+}
+/* @media (max-width: 425px) {
+  .days{
+    width: 100%;
+  }
+  .weekdays{
+    width: 100%;
+  }
+  .dayweek{
+    width: 20px;
+  }
+  .day{
+    width: 10px;
+  }
+} */
+@media (max-width: 320px) {
+  .days{
+    width: inherit;
+  }
+  .day{
+    width: unset;
+  }
+  .weekdays{
+    width: 113.5%;
+  }
 }

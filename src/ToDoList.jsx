@@ -43,11 +43,12 @@ const ToDo = ({ tasks = [], setTasks , dateText}) => {
                 {tasks.map((task, index) => 
                 <li key={index} style={{ 
             backgroundColor: task.isDone ? '#D9C59B' : 'white', 
-            color: task.isDone ? 'white' : 'black' 
+            color: task.isDone ? 'white' : 'black', border: task.isDone ? '1px solid white' : '1px solid #D9C59B' 
         }}>
         <span className="text">
-            {task.text} {task.isDone ? `(Выполнено)` : ""} 
-        </span>
+    <span className="task-text">{task.text}</span>
+    {task.isDone && <span className="status">(Выполнено)</span>}
+</span>
         
         <button 
             className="suggest" 
