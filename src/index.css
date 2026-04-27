@@ -125,7 +125,7 @@ li {
 
 .weekdays {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 5px;
 }
 
@@ -143,7 +143,7 @@ li {
   align-items: center;
   padding: 10px;
   border: 1px solid #D9C59B;
-  width: 105.5px;
+  width: 127.7px;
   cursor: pointer;
 }
 
@@ -151,7 +151,7 @@ li {
   color: #D9C59B; /* Цвет для дней соседних месяцев */
 }
 .dayweek {
-  width: 125px;
+  width: 127px;
   height: 30px;
   border: 1px solid #D9C59B;
   display: flex;
@@ -203,15 +203,15 @@ img{
 }
 
 } */
- @media (max-width: 600px) {
+ /* @media (max-width: 600px) {
   #root {
     margin: 0 auto;
     width: 100%;
     overflow-x: hidden; /* Защита от горизонтальной прокрутки */
-  }
+  /* }
 
   #core {
-    padding: 10px; /* Уменьшили отступ, чтобы выиграть место */
+    padding: 10px; 
   }
   .weekdays{
     width: 100%;
@@ -236,7 +236,6 @@ img{
     width: -webkit-fill-available;
   }
 
-  /* Длинный текст в списке задач */
   
   .del{
   width: 100%;
@@ -250,7 +249,7 @@ img{
 .days{
   width: -webkit-fill-available;  
 }
-}
+} */
 /* @media (max-width: 425px) {
   .days{
     width: 100%;
@@ -265,7 +264,7 @@ img{
     width: 10px;
   }
 } */
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
   .days{
     width: inherit;
   }
@@ -274,5 +273,32 @@ img{
   }
   .weekdays{
     width: 113.5%;
+  }
+} */ 
+ * {
+  box-sizing: border-box; /* Теперь padding не расширяет блоки */
+}
+
+@media (max-width: 600px) {
+  #root, #core {
+    width: 100% !important;
+    overflow-x: hidden;
+    padding: 10px;
+  }
+  
+  .weekdays, .days {
+    flex-wrap: nowrap;
+    width: 100% !important;
+  }
+
+  .dayweek, .day {
+    width:-webkit-fill-available; /* Жестко делим на 7 частей */
+    font-size: 14px; /* Уменьшаем шрифт, чтобы цифры влезли */
+  }
+  .status{
+  white-space: nowrap;
+}
+  .text{
+    flex-direction: column;
   }
 }
